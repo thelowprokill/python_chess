@@ -1,4 +1,4 @@
-from controller   import controller
+from controller import controller
 import save_load as sl
 import sys
 
@@ -17,10 +17,10 @@ class board:
     # purpose: set up the board                            #
     #                                                      #
     ########################################################
-    def __init__(self, display):
-        print("Init board")
+    def __init__(self, parent, display):
         self.display = display
-        self.turn = 1
+        self.parent  = parent
+        self.turn    = 1
         self.init_commands()
 
     ########################################################
@@ -171,7 +171,6 @@ class board:
     ########################################################
     def load_game(self):
         sl.load_game(self)
-        self.redraw()
         self.game()
 
     ########################################################
@@ -204,6 +203,7 @@ class board:
         self.commands.append(("s", self.save_game, "Saving Game", "Save the current game state."))
         self.commands.append(("l", self.load_game, "Loading Game", "Load saved game, losses current progress."))
         self.commands.append(("r", self.redraw, "Redrawing board", "Redraws the board. In case it gets to far up."))
+        self.commands.append(("m", self.parent.menu, "Main Menu", "Main Menu"))
         self.commands.append(("h", self.command_help, "Help", "Shows list of available commands."))
 
     ########################################################

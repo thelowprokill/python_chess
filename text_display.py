@@ -113,6 +113,56 @@ class text_display:
 
     ########################################################
     #                                                      #
+    # function not_implemented:                            #
+    #                                                      #
+    # purpose: inform user that the function does not      #
+    #   exist yet.                                         #
+    #                                                      #
+    ########################################################
+    def not_implemented(self, fn):
+        print("I'm sorry, {} has not been implemented yet.".format(fn))
+
+    ########################################################
+    #                                                      #
+    # function invalid:                                    #
+    #                                                      #
+    # purpose: inform user of an invalid menu option       #
+    #                                                      #
+    ########################################################
+    def invalid(self, option):
+        print("{} is not a valid option".format(option))
+
+    ########################################################
+    #                                                      #
+    # function render_menu:                                #
+    #                                                      #
+    # purpose: draw the main menu with links to features   #
+    #   of the game.                                       #
+    #                                                      #
+    ########################################################
+    def render_menu(self, menu_options):
+        print("\n")
+        print("=========================================")
+        print("=============== Main Menu ===============")
+        for option in menu_options:
+            c = option[0]
+            d = option[3]
+            print("[{}]: {}".format(c, d))
+        print("")
+        decision = input("option: ")
+        for option in menu_options:
+            c = option[0]
+            v = option[1]
+            f = option[2]
+            d = option[3]
+            t = option[4]
+            if c == decision:
+                return v, f, d, t
+        self.invalid(decision)
+        return self.render_menu(menu_options)
+
+    ########################################################
+    #                                                      #
     # function draw:                                       #
     #                                                      #
     # purpose: render stored board                         #

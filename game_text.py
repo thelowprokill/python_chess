@@ -6,8 +6,23 @@ import sys
 class game_text:
     def __init__(self):
         self.display = text_display()
-        self.board = board(self.display)
-        self.new_game()
+        self.board = board(self, self.display)
+        self.menu()
+
+    def menu(self):
+        options = []
+        options.append(("1", True,  self.new_game,                "New Game",      "Starting New Game."))
+        options.append(("2", True,  self.board.load_game,         "Load Game",     "Loading Game"))
+        options.append(("3", False, self.display.not_implemented, "Options",       ""))
+        options.append(("q", True,  sys.exit,                     "Exit the game", "By"))
+        valid, f, d, t = self.display.render_menu(options)
+        print(t)
+        print("")
+        if not valid:
+            self.display.not_implemented(d)
+            self.menu()
+        else:
+            f()
 
     def new_game(self):
         self.turn = 1

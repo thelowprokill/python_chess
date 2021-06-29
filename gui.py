@@ -22,8 +22,10 @@ class MainWindow(QtWidgets.QMainWindow):
         self.game_thread.start()
 
     def init_board(self):
-        self.game_board = board.board(self)
+        self.game_board = board.board(self, self)
 
+    def menu(self):
+        pass
 
     def init_gui(self):
 
@@ -133,7 +135,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def clear(self):
         self.board = []
-        pass
 
     def closeEvent(self, event):
         print("closed")

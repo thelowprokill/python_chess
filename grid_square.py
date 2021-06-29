@@ -31,7 +31,6 @@ class grid_square(QtWidgets.QWidget):
                 print("can")
                 self.can_move.show()
 
-
     def setupUi(self):
         self.left   = 0
         self.top    = 0
