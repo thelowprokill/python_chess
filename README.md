@@ -9,31 +9,31 @@ python3 crypto.py
 python3 game_text.py
 
 ## game play
-currently only 2 player
-select an x and y index of a piece
-if there is a piece at selection with at least one valid move
-select an x and y destination for the piece
-if the piece was chosen in error leave the destination field blank and try again
-Normal chess rules are implemented.
+currently only 2 player<br />
+select an x and y index of a piece<br />
+if there is a piece at selection with at least one valid move<br />
+select an x and y destination for the piece<br />
+if the piece was chosen in error leave the destination field blank and try again<br />
+Normal chess rules are implemented.<br />
 
 ## commands
-q: Exit the game
-n: Start a new game
-s: Save current game
-l: Load a saved game
-r: Redraws the board
-h: Show list of available commands
+q: Exit the game<br />
+n: Start a new game<br />
+s: Save current game<br />
+l: Load a saved game<br />
+r: Redraws the board<br />
+h: Show list of available commands<br />
 
 ## env
 This was created using python 3.8.5 on Ubuntu 20.04
 
 ## libraries
-numpy
-os
-random
-sys
-
-experimental GUI version does not work at the moment
-PIL
-PyQt5
-threading
+numpy<br />
+os<br />
+random<br />
+sys<br />
+<br />
+experimental GUI version does not work at the moment<br />
+PIL<br />
+PyQt5<br />
+threading<br />
