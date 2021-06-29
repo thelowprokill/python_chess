@@ -17,10 +17,11 @@ class board:
     # purpose: set up the board                            #
     #                                                      #
     ########################################################
-    def __init__(self, parent, display):
-        self.display = display
-        self.parent  = parent
-        self.turn    = 1
+    def __init__(self, parent, display, display_type):
+        self.parent       = parent
+        self.display      = display
+        self.display_type = display_type
+        self.turn         = 1
         self.init_commands()
 
     ########################################################

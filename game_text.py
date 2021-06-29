@@ -6,7 +6,7 @@ import sys
 class game_text:
     def __init__(self):
         self.display = text_display()
-        self.board = board(self, self.display)
+        self.board = board(self, self.display, 1)
         self.menu()
 
     def menu(self):
