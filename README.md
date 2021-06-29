@@ -22,6 +22,7 @@ n: Start a new game<br />
 s: Save current game<br />
 l: Load a saved game<br />
 r: Redraws the board<br />
+m: Main Menu<br />
 h: Show list of available commands<br />
 
 ## env
