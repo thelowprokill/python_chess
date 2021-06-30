@@ -56,19 +56,23 @@ class grid_square(QtWidgets.QWidget):
             pixmap = QtGui.QPixmap("sprites/board/black.png")
         else:
             pixmap = QtGui.QPixmap("sprites/board/white.png")
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
 
         self.background = QtWidgets.QLabel(self)
         self.background.setPixmap(pixmap)
 
         pixmap = QtGui.QPixmap("sprites/board/last_move.png")
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.last_move = QtWidgets.QLabel(self)
         self.last_move.setPixmap(pixmap)
 
         pixmap = QtGui.QPixmap("sprites/board/selected.png")
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.selected = QtWidgets.QLabel(self)
         self.selected.setPixmap(pixmap)
 
         pixmap = QtGui.QPixmap("sprites/board/can_move.png")
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.can_move = QtWidgets.QLabel(self)
         self.can_move.setPixmap(pixmap)
 

@@ -9,7 +9,7 @@ import sys
 # purpose: game_controller for display_gui based game      #
 #                                                          #
 ############################################################
-class game_display_gui:
+class game_gui:
     ########################################################
     #                                                      #
     # function __init__:                                   #
@@ -170,4 +170,4 @@ class game_display_gui:
         self.display.draw()
 
 if __name__ == "__main__":
-    g = game_display_gui()
+    g = game_gui()

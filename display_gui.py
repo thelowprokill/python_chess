@@ -4,6 +4,13 @@ import board
 from grid_square import grid_square
 from threading import Thread
 
+############################################################
+#                                                          #
+# class config:                                            #
+#                                                          #
+# purpose: default settings move to a config loader later  #
+#                                                          #
+############################################################
 class config:
     def __init__(self):
         self.win_width = 850
@@ -11,6 +18,13 @@ class config:
         self.cell_width  = 100
         self.cell_height = 100
 
+############################################################
+#                                                          #
+# class MainWindow:                                        #
+#                                                          #
+# purpose: gui                                             #
+#                                                          #
+############################################################
 class MainWindow(QtWidgets.QMainWindow):
     ########################################################
     #                                                      #
@@ -194,42 +208,42 @@ class MainWindow(QtWidgets.QMainWindow):
         self.sprites = []
         # white
         pixmap = QtGui.QPixmap("sprites/white/pawn.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "p", pixmap))
         pixmap = QtGui.QPixmap("sprites/white/rook.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "r", pixmap))
         pixmap = QtGui.QPixmap("sprites/white/knight.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "k", pixmap))
         pixmap = QtGui.QPixmap("sprites/white/bishop.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "b", pixmap))
         pixmap = QtGui.QPixmap("sprites/white/queen.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "q", pixmap))
         pixmap = QtGui.QPixmap("sprites/white/king.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("w", "K", pixmap))
 
         # black
         pixmap = QtGui.QPixmap("sprites/black/pawn.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "p", pixmap))
         pixmap = QtGui.QPixmap("sprites/black/rook.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "r", pixmap))
         pixmap = QtGui.QPixmap("sprites/black/knight.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "k", pixmap))
         pixmap = QtGui.QPixmap("sprites/black/bishop.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "b", pixmap))
         pixmap = QtGui.QPixmap("sprites/black/queen.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "q", pixmap))
         pixmap = QtGui.QPixmap("sprites/black/king.png")
-        pixmap = pixmap.scaled(100, 100, QtCore.Qt.KeepAspectRatio)
+        pixmap = pixmap.scaled(self.config.cell_width, self.config.cell_height, QtCore.Qt.KeepAspectRatio)
         self.sprites.append(("b", "K", pixmap))
 
 ########################################################
