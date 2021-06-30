@@ -315,6 +315,7 @@ class controller:
         if m_to not in legal_moves:
             return False
 
+        self.opponent.clear_cue()
         p.move(m_to)
         self.opponent.capture(m_to)
         if self.is_check():
