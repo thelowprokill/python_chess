@@ -77,5 +77,4 @@ class grid_square(QtWidgets.QWidget):
         self.update_sprite(None, [])
 
     def mouseReleaseEvent(self, ev):
-        print("Pressed at {},{}".format(self.x, self.y))
         self.callback((self.x, self.y))

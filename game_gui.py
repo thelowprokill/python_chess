@@ -1,15 +1,15 @@
-import gui
+import display_gui
 from board import board
 import sys
 
 ############################################################
 #                                                          #
-# class game_gui:                                          #
+# class game_display_gui:                                  #
 #                                                          #
-# purpose: game_controller for gui based game              #
+# purpose: game_controller for display_gui based game      #
 #                                                          #
 ############################################################
-class game_gui:
+class game_display_gui:
     ########################################################
     #                                                      #
     # function __init__:                                   #
@@ -23,13 +23,13 @@ class game_gui:
         self.castle_moves = []
         self.last_move = (-1, -1, -1, -1)
         self.board = board()
-        self.app = gui.build_app()
-        self.display = gui.MainWindow(self.board, self)
+        self.app = display_gui.build_app()
+        self.display = display_gui.MainWindow(self.board, self)
         self.new_game()
         self.render()
         self.display.show()
 
-        gui.start_gui(self.app)
+        display_gui.start_gui(self.app)
 
     ########################################################
     #                                                      #
@@ -94,7 +94,6 @@ class game_gui:
     #                                                      #
     ########################################################
     def select_move(self, l):
-        print("select_move")
         turn = self.board.turn
         player = self.board.white if turn == 1 else self.board.black
 
@@ -171,4 +170,4 @@ class game_gui:
         self.display.draw()
 
 if __name__ == "__main__":
-    g = game_gui()
+    g = game_display_gui()

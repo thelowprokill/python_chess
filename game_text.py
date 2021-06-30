@@ -1,4 +1,4 @@
-from text_display import text_display
+from display_text import display_text
 from board import board
 import sys
 
@@ -19,7 +19,7 @@ class game_text:
     #                                                      #
     ########################################################
     def __init__(self):
-        self.display = text_display()
+        self.display = display_text()
         self.board = board()
         self.init_commands()
         self.menu()
@@ -29,7 +29,7 @@ class game_text:
     # function menu:                                       #
     #                                                      #
     # purpose: generates a menu to be displayed by         #
-    #   text_display                                       #
+    #   display_text                                       #
     #                                                      #
     ########################################################
     def menu(self):
