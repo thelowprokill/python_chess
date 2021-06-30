@@ -68,7 +68,6 @@ class board:
           if piece.piece == "K":
               castle_moves = player.can_castle()
           moves = player.check_for_check(piece, moves)
-          castle_moves = player.check_for_check(piece, castle_moves)
           return piece, moves, castle_moves
 
 

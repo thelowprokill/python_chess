@@ -44,7 +44,7 @@ class piece:
     #                                                      #
     ########################################################
     def has_moved(self):
-        if self.x != starting_x or self.y != starting_y:
+        if self.x != self.starting_x or self.y != self.starting_y:
             self.moved = True
 
     ########################################################

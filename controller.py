@@ -91,7 +91,7 @@ class controller:
                 king = p
             if p.piece == "r":
                 rooks.append(p)
-        if len(rooks) == 0 or king.moved:
+        if len(rooks) == 0 or king.moved or self.is_check():
             return []
 
         ################################
@@ -106,10 +106,20 @@ class controller:
         for r in rooks:
             if not r.moved:
                 if r.x == 7 and not self.get_piece((5, r.y))[0] and not self.get_piece((6, r.y))[0]:
-                    moves.append((king.x + 2, king.y, "ck"))
+                    king.move((5, r.y))
+                    if not self.is_check():
+                        king.move((6, r.y))
+                        if not self.is_check():
+                            moves.append((6, king.y, "ck"))
+                    king.move((4, r.y))
 
                 elif r.x == 0 and not self.get_piece((3, r.y))[0] and not self.get_piece((2, r.y))[0] and not self.get_piece((1, r.y))[0]:
-                    moves.append((king.x - 2, king.y, "cq"))
+                    king.move((3, r.y))
+                    if not self.is_check():
+                        king.move((2, r.y))
+                        if not self.is_check():
+                            moves.append((2, king.y, "cq"))
+                    king.move((4, r.y))
         return moves
 
         ################################
@@ -124,7 +134,7 @@ class controller:
     # purpose: update moved attribute of pieces            #
     #                                                      #
     ########################################################
-    def has_moved():
+    def has_moved(self):
         for p in self.my_pieces:
             p.has_moved()
 
@@ -322,6 +332,9 @@ class controller:
             p.move(m_from)
             self.opponent.replace_piece()
             return False
+
+        if official:
+            self.has_moved()
 
         return True
 
