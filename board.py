@@ -61,6 +61,11 @@ class board:
     #                                                      #
     ########################################################
     def move(self):
+        print("---------- Deprecated ----------")
+        print("function board.move/0 is deprecated")
+        print("prefer call move from game_controller")
+        print("---------- Deprecated ----------")
+
         player = self.white if self.turn == 1 else self.black
         player.clear_cue()
 

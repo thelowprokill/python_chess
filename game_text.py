@@ -25,7 +25,6 @@ class game_text:
             f()
 
     def new_game(self):
-        self.turn = 1
         self.board.new_game()
         self.redraw()
 
