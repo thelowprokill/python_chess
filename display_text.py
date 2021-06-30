@@ -7,7 +7,7 @@ import numpy as np
 # purpose: handle user interface in terminal               #
 #                                                          #
 ############################################################
-class text_display:
+class display_text:
     ########################################################
     #                                                      #
     # function __init__:                                   #

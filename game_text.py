@@ -37,7 +37,7 @@ class game_text:
         options.append(("1", True,  self.new_game,  "New Game",      "Starting New Game."))
         options.append(("2", True,  self.load_game, "Load Game",     "Loading Game"))
         options.append(("3", False, None,           "Options",       ""))
-        options.append(("q", True,  sys.exit,       "Exit the game", "By"))
+        options.append(("q", True,  sys.exit,       "Exit the game", "Bye"))
         valid, f, d, t = self.display.render_menu(options)
         print(t)
         print("")
@@ -81,6 +81,7 @@ class game_text:
         while not self.board.game_over():
             self.move()
             self.redraw()
+        self.menu()
 
     ########################################################
     #                                                      #
@@ -133,9 +134,9 @@ class game_text:
         self.board.white.update_display(self.display.input)
         self.board.black.update_display(self.display.input)
         p = self.board.white if self.board.turn == 1 else self.board.black
-        player = "White" if self.board.turn == 1 else "Black"
+        player = "White" if self.board.turn == -1 else "Black"
         if p.is_mate():
-            self.display_is_mate(player)
+            self.display.is_mate(player)
         elif p.is_check():
             self.display.is_check(player)
 
