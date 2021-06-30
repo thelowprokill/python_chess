@@ -69,7 +69,7 @@ class text_display:
     # purpose: add a piece to the render                   #
     #                                                      #
     ########################################################
-    def input(self, l, p, c):
+    def input(self, l, p, c, flags=[]):
         np = translate_piece(p, c)
         self.locations[l[1]][l[0]] = np
 

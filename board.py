@@ -18,7 +18,7 @@ class board:
     #                                                      #
     ########################################################
     def __init__(self):
-        pass
+        self.last_move = (-1, -1, -1, -1)
 
     ########################################################
     #                                                      #
@@ -41,7 +41,7 @@ class board:
     #                                                      #
     ########################################################
     def new_game(self):
-        self.last_move = (0,0,0,0)
+        self.last_move = (-1, -1, -1, -1)
         self.white = controller(1)
         self.black = controller(-1)
         self.white.construct(self.black)
@@ -85,6 +85,7 @@ class board:
     def move_piece(self, m_from, m_to):
         player = self.white if self.turn == 1 else self.black
         piece, moves, castle_moves = self.select_piece(m_from)
+        success = False
         for m in castle_moves:
             if m[0] == m_to[0] and m[1] == m_to[1]:
                 m_to = m

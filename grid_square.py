@@ -10,10 +10,27 @@ class grid_square(QtWidgets.QWidget):
         self.callback = callback
         self.setupUi()
 
+    ########################################################
+    #                                                      #
+    # function update_sprite:                              #
+    #                                                      #
+    # args:                                                #
+    #   s: pixmap of the piece sprite                      #
+    #   flags: list of strings                             #
+    #     l: last move                                     #
+    #     s: selected                                      #
+    #     c: can move                                      #
+    #                                                      #
+    # purpose: update the square with the correct          #
+    #   information                                        #
+    #                                                      #
+    ########################################################
     def update_sprite(self, s, flags=[]):
-        print("sprite {}, at {}".format(s, (self.x, self.y)))
+        #print("sprite {}, at {}".format(s, (self.x, self.y)))
+        self.piece.hide()
         if s != None:
             self.piece.setPixmap(s)
+            self.piece.show()
 
         self.last_move.hide()
         self.selected.hide()
@@ -22,13 +39,10 @@ class grid_square(QtWidgets.QWidget):
         # show extra sprites
         for f in flags:
             if f == "l":
-                print("last")
                 self.last_move.show()
             elif f == "s":
-                print("selected")
                 self.selected.show()
             elif f == "c":
-                print("can")
                 self.can_move.show()
 
     def setupUi(self):
@@ -39,26 +53,28 @@ class grid_square(QtWidgets.QWidget):
         self.setGeometry(self.left, self.top, self.width, self.height)
 
         if (self.x + self.y) % 2 == 1:
-            pixmap = QtGui.QPixmap("sprites/black.png")
+            pixmap = QtGui.QPixmap("sprites/board/black.png")
         else:
-            pixmap = QtGui.QPixmap("sprites/white.png")
+            pixmap = QtGui.QPixmap("sprites/board/white.png")
 
         self.background = QtWidgets.QLabel(self)
         self.background.setPixmap(pixmap)
 
-        pixmap = QtGui.QPixmap("sprites/last_move.png")
+        pixmap = QtGui.QPixmap("sprites/board/last_move.png")
         self.last_move = QtWidgets.QLabel(self)
         self.last_move.setPixmap(pixmap)
 
-        pixmap = QtGui.QPixmap("sprites/selected.png")
+        pixmap = QtGui.QPixmap("sprites/board/selected.png")
         self.selected = QtWidgets.QLabel(self)
         self.selected.setPixmap(pixmap)
 
-        pixmap = QtGui.QPixmap("sprites/can_move.png")
+        pixmap = QtGui.QPixmap("sprites/board/can_move.png")
         self.can_move = QtWidgets.QLabel(self)
         self.can_move.setPixmap(pixmap)
 
         self.piece = QtWidgets.QLabel(self)
+
+        self.update_sprite(None, [])
 
     def mouseReleaseEvent(self, ev):
         print("Pressed at {},{}".format(self.x, self.y))

@@ -88,8 +88,6 @@ class game_text:
     #                                                      #
     # purpose: move for a player                           #
     #                                                      #
-    # returns: true on success false otherwise             #
-    #                                                      #
     ########################################################
     def move(self):
         turn = self.board.turn
