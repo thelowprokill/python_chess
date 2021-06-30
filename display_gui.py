@@ -14,7 +14,7 @@ from threading import Thread
 class config:
     def __init__(self):
         self.win_width = 850
-        self.win_height = 850
+        self.win_height = 900
         self.cell_width  = 100
         self.cell_height = 100
 
@@ -114,14 +114,41 @@ class MainWindow(QtWidgets.QMainWindow):
         ##########################################
 
         self.menu = QtWidgets.QHBoxLayout()
-        self.new_game_label = QtWidgets.QLabel()
-        self.new_game_label.clicked.connect(self.new_game)
+
+        self.new_game_button = QtWidgets.QPushButton("New Game")
+        self.new_game_button.clicked.connect(self.new_game)
+
+        self.load_game_button = QtWidgets.QPushButton("Load Game")
+        self.load_game_button.clicked.connect(self.load_game)
+
+        self.save_game_button = QtWidgets.QPushButton("Save Game")
+        self.save_game_button.clicked.connect(self.save_game)
+
+        self.quit_game_button = QtWidgets.QPushButton("Quit Game")
+        self.quit_game_button.clicked.connect(self.quit_game)
+
+        self.menu.addWidget(self.new_game_button)
+        self.menu.addWidget(self.load_game_button)
+        self.menu.addWidget(self.save_game_button)
+        self.menu.addWidget(self.quit_game_button)
+
+        self.layout.addLayout(self.menu)
 
         ##########################################
         ### /footer                            ###
         ##########################################
 
-    def new_game(self, l)
+    def new_game(self):
+        print("new game")
+
+    def load_game(self):
+        print("load game")
+
+    def save_game(self):
+        print("save game")
+
+    def quit_game(self):
+        print("quit game")
 
     ########################################################
     #                                                      #
