@@ -7,7 +7,7 @@ import numpy as np
 # purpose: handle user interface in terminal               #
 #                                                          #
 ############################################################
-class text_display:
+class display_text:
     ########################################################
     #                                                      #
     # function __init__:                                   #
@@ -69,7 +69,7 @@ class text_display:
     # purpose: add a piece to the render                   #
     #                                                      #
     ########################################################
-    def input(self, l, p, c):
+    def input(self, l, p, c, flags=[]):
         np = translate_piece(p, c)
         self.locations[l[1]][l[0]] = np
 

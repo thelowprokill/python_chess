@@ -345,5 +345,3 @@ class controller:
             self.opponent.replace_piece()
             p.move(pos)
         return moves
-
-
