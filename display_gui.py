@@ -113,11 +113,15 @@ class MainWindow(QtWidgets.QMainWindow):
         ### footer                             ###
         ##########################################
 
+        self.menu = QtWidgets.QHBoxLayout()
+        self.new_game_label = QtWidgets.QLabel()
+        self.new_game_label.clicked.connect(self.new_game)
 
         ##########################################
         ### /footer                            ###
         ##########################################
 
+    def new_game(self, l)
 
     ########################################################
     #                                                      #
