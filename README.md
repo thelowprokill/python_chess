@@ -6,15 +6,26 @@ python3 crypto.py
 \# this generates the key for saving a loading
 
 ## start the game
-python3 game_text.py
+python3 game_text.py<br />
+or<br />
+python3 game_gui.py
 
-## game play
+## game play text
 currently only 2 player<br />
 select an x and y index of a piece<br />
 if there is a piece at selection with at least one valid move<br />
 select an x and y destination for the piece<br />
+a list of legal moves for that piece is provided<br />
 if the piece was chosen in error leave the destination field blank and try again<br />
 Normal chess rules are implemented.<br />
+
+## game play gui
+currently no save and load.<br />
+select a piece with the mouse.<br />
+selected piece is has a green boarder.<br />
+available moves have a blue boarder.<br />
+opponents previous move has a purple boarder.<br />
+pieces that have no legal move cannot be selected.<br />
 
 ## commands
 q: Exit the game<br />
