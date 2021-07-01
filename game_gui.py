@@ -40,6 +40,7 @@ class game_gui:
     ########################################################
     def new_game(self):
         self.board.new_game()
+        self.render()
 
     ########################################################
     #                                                      #
@@ -50,6 +51,10 @@ class game_gui:
     ########################################################
     def load_game(self):
         self.board.load_game()
+        self.render()
+
+    def save_game(self):
+        self.board.save_game()
 
     ########################################################
     #                                                      #

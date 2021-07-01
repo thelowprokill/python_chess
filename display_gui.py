@@ -140,15 +140,22 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def new_game(self):
         print("new game")
+        new_game_thread = Thread(target = self.game_controller.new_game())
+        new_game_thread.start()
 
     def load_game(self):
         print("load game")
+        load_game_thread = Thread(target = self.game_controller.load_game())
+        load_game_thread.start()
 
     def save_game(self):
         print("save game")
+        save_game_thread = Thread(target = self.game_controller.save_game())
+        save_game_thread.start()
 
     def quit_game(self):
         print("quit game")
+        sys.exit()
 
     ########################################################
     #                                                      #
