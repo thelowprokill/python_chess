@@ -20,7 +20,6 @@ if the piece was chosen in error leave the destination field blank and try again
 Normal chess rules are implemented.<br />
 
 ## game play gui
-currently no save and load.<br />
 select a piece with the mouse.<br />
 selected piece is has a green boarder.<br />
 available moves have a blue boarder.<br />
