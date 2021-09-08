@@ -51,3 +51,6 @@ GUI version only<br />
 PIL<br />
 PyQt5<br />
 threading<br />
+
+install python libraries with:
+pip install $library_name
