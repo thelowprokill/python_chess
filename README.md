@@ -44,7 +44,7 @@ os<br />
 random<br />
 sys<br />
 <br />
-experimental GUI version does not work at the moment<br />
+GUI version only<br />
 PIL<br />
 PyQt5<br />
 threading<br />
