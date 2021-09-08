@@ -4,6 +4,8 @@ This is my simple implementation of text based chess.
 ## first time set up...
 python3 crypto.py 
 \# this generates the key for saving a loading
+$mv new_key.py key.py
+\# this is to prevent accidentally overwriting the key.
 
 ## start the game
 python3 game_text.py<br />
