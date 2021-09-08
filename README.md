@@ -52,5 +52,5 @@ PIL<br />
 PyQt5<br />
 threading<br />
 
-install python libraries with:
+install python libraries with: <br />
 pip install $library_name
