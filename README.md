@@ -1,9 +1,10 @@
-# python_chess
+# Python Chess
 
 This is my simple implementation of text based chess.
 ## first time set up...
 python3 crypto.py 
 \# this generates the key for saving a loading
+<br />
 $mv new_key.py key.py
 \# this is to prevent accidentally overwriting the key.
 
