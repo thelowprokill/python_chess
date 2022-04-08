@@ -1,5 +1,5 @@
-from display_text import display_text
-from board import board
+from gui.display_text import display_text
+from data.board import board
 import sys
 
 

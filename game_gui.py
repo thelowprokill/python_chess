@@ -1,5 +1,5 @@
-import display_gui
-from board import board
+import gui.display_gui as display_gui
+from data.board import board
 import sys
 
 ############################################################

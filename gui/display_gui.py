@@ -1,7 +1,7 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets, Qt
-import board
-from grid_square import grid_square
+import data.board as board
+from gui.grid_square import grid_square
 from threading import Thread
 
 ############################################################
