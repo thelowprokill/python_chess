@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from gui.display_text import display_text
 from data.board import board
 import sys

@@ -1,6 +1,8 @@
 key.py
 
 *.dat
+games
+games/
 
 *.org
 

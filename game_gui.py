@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import gui.display_gui as display_gui
 from data.board import board
 import sys
