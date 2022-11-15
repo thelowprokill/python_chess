@@ -82,7 +82,7 @@ class display_text:
     ########################################################
     def is_check(self, who):
         self.check = True
-        self.who = who
+        self.who   = who
 
     ########################################################
     #                                                      #
@@ -93,7 +93,7 @@ class display_text:
     ########################################################
     def is_mate(self, who):
         self.mate = True
-        self.who = who
+        self.who  = who
 
     ########################################################
     #                                                      #

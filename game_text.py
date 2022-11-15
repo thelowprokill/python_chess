@@ -135,10 +135,11 @@ class game_text:
         self.board.white.update_display(self.display.input)
         self.board.black.update_display(self.display.input)
         p = self.board.white if self.board.turn == 1 else self.board.black
-        player = "White" if self.board.turn == -1 else "Black"
         if p.is_mate():
+            player = "White" if self.board.turn == -1 else "Black"
             self.display.is_mate(player)
         elif p.is_check():
+            player = "Black" if self.board.turn == -1 else "White"
             self.display.is_check(player)
 
         self.display.draw()
